@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/common/common.jsp"%>    
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,6 @@
 <title>boardUpdate</title>
 </head>
 <script type="text/javascript">
-
 	$j(document).ready(function(){
 		
 		$j("#submit").on("click",function(){
@@ -22,15 +21,15 @@
 			    data : param,
 			    success: function(data, textStatus, jqXHR)
 			    {
-					alert("¼öÁ¤¿Ï·á");
+					alert("ìˆ˜ì •ì™„ë£Œ");
 					
-					alert("¸Þ¼¼Áö:"+data.success);
+					alert("ë©”ì„¸ì§€:"+data.success);
 					
 					location.href = "/board/boardList.do?pageNo=1";
 			    },
-			    error: function (jqXHR, textStatus, errorThrown)
+			    error: function (data, textStatus, jqXHR)
 			    {
-			    	alert("½ÇÆÐ");
+			    	alert("ì‹¤íŒ¨");
 			    }
 			});
 		});
@@ -44,7 +43,7 @@
 	<table align="center">
 		<tr>
 			<td align="right">
-			<input id="submit" type="button" value="¼öÁ¤">
+			<input id="submit" type="button" value="ìˆ˜ì •">
 			</td>
 		</tr>
 		<tr>

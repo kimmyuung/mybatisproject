@@ -1,5 +1,6 @@
 package com.spring.board.dao.impl;
 
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -7,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.spring.board.dao.BoardDao;
+import com.spring.board.vo.BoardByListVo;
 import com.spring.board.vo.BoardVo;
+import com.spring.board.vo.ComCodeVo;
 import com.spring.board.vo.PageVo;
 
 @Repository
@@ -54,12 +57,22 @@ public class BoardDaoImpl implements BoardDao{
 	public int boardUpdate(BoardVo boardVo) throws Exception {
 		
 		return sqlSession.update("board.boardUpdate", boardVo);
+		 
 	}
 	@Override
 	public int boardDelete(BoardVo boardVo) throws Exception {
 		// TODO Auto-generated method stub
+		
 		return sqlSession.delete("board.boardDelete", boardVo);
 	}
 	
+	@Override
+	public List<ComCodeVo> codeNameList() throws Exception {
+		return sqlSession.selectList("board.codeNameList");
+	}
+	@Override
+	public int boardInsertbyList(BoardByListVo list) throws Exception {
+		return sqlSession.insert("board.boardInsertbyList", list);
+	}
 	
 }

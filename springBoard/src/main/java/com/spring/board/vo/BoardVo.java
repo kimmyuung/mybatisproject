@@ -1,33 +1,41 @@
 package com.spring.board.vo;
 
+import java.util.Arrays;
+
 public class BoardVo {
 	
-	private String 	boardType;
+	private String codeId;
+	private String codeName;
+	private String boardType;
 	private int 	boardNum;
 	private String 	boardTitle;
 	private String 	boardComment;
 	private String 	creator;
 	private String	modifier;
 	private int totalCnt;
-	
-	
-	public int getTotalCnt() {
-		return totalCnt;
+	public String getCodeId() {
+		return codeId;
 	}
-	public void setTotalCnt(int totalCnt) {
-		this.totalCnt = totalCnt;
+	public void setCodeId(String codeId) {
+		this.codeId = codeId;
 	}
-	public int getBoardNum() {
-		return boardNum;
+	public String getCodeName() {
+		return codeName;
 	}
-	public void setBoardNum(int boardNum) {
-		this.boardNum = boardNum;
+	public void setCodeName(String codeName) {
+		this.codeName = codeName;
 	}
 	public String getBoardType() {
 		return boardType;
 	}
 	public void setBoardType(String boardType) {
 		this.boardType = boardType;
+	}
+	public int getBoardNum() {
+		return boardNum;
+	}
+	public void setBoardNum(int boardNum) {
+		this.boardNum = boardNum;
 	}
 	public String getBoardTitle() {
 		return boardTitle;
@@ -53,11 +61,17 @@ public class BoardVo {
 	public void setModifier(String modifier) {
 		this.modifier = modifier;
 	}
+	public int getTotalCnt() {
+		return totalCnt;
+	}
+	public void setTotalCnt(int totalCnt) {
+		this.totalCnt = totalCnt;
+	}
 	@Override
 	public String toString() {
-		return "BoardVo [boardType=" + boardType + ", boardNum=" + boardNum + ", boardTitle=" + boardTitle
-				+ ", boardComment=" + boardComment + ", creator=" + creator + ", modifier=" + modifier + ", totalCnt="
-				+ totalCnt + "]";
+		return "BoardVo [codeId=" + codeId + ", codeName=" + codeName + ", boardType=" + boardType + ", boardNum="
+				+ boardNum + ", boardTitle=" + boardTitle + ", boardComment=" + boardComment + ", creator=" + creator
+				+ ", modifier=" + modifier + ", totalCnt=" + totalCnt + "]";
 	}
 	
 	

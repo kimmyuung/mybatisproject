@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/common/common.jsp"%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,25 +9,22 @@
 </head>
 <script type="text/javascript">
 
-	function boarddelete(boardType,  boardNum){
+	function boarddelete (boardType,  boardNum){
 		alert(boardType + " " + boardNum);
-		$.ajax({
-			 url : "/board/boardWriteAction.do",
+	 	$j.ajax({
+			 url : "/board/boardDeleteAction.do" ,
 			 type : "POST",
-			 data : {"boardType" : boardType, "boardNum" : boardNum}
+			 data : {"boardType" : boardType, "boardNum" : boardNum},
 			  success: function()
 			    {
-					alert("»èÁ¦ ¿Ï·á");
-					
-					alert("¸Þ¼¼Áö:");
-					
+					alert("ì‚­ì œ ì„±ê³µ");			
 					location.href = "/board/boardList.do?pageNo=1";
-			    },
-			   /*  error: function ()
+			    }, 
+			    error: function ()
 			    {
-			    	alert("½ÇÆÐ");
-			    } */
-		});
+			    
+			    } 
+	});
 	}
 	
 	</script>
@@ -63,16 +60,15 @@
 		</td>
 	</tr>
 	<tr>
-			<td align="right">
+		<td align="right">
 			<a href="/board/boardList.do">List</a>
-			</td>
-			
+		</td>
 			<td>
 			<a href = "/board/${board.boardType}/${board.boardNum}/boardUpdate.do">Update</a>
 			</td>
 			
 			<td align="right">
-				<input id="boarddelete" type="button" value="Delete" onclick="boarddelete(${board.boardType}, ${board.boardNum})">
+				<input id="boarddelete" type="button" value="Delete" onclick="boarddelete(${board.boardType},${board.boardNum})">
 			</td>
 	</tr>
 </table>	
